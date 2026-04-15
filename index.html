@@ -6,7 +6,10 @@
       name="viewport"
       content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
     />
-    <link rel="stylesheet" href="./trochoi.css" />
+    <link
+      rel="stylesheet"
+      href="https://giabao123123.github.io/trochoi/trochoi.css"
+    />
     <link
       rel="apple-touch-icon"
       sizes="57x57"
@@ -780,7 +783,6 @@
         stopAllMusic();
       }
       let quiz = [
-        // ===== 1. LỄ HỘI – TÍN NGƯỠNG (8 CÂU) =====
         {
           question:
             "Lễ hội lớn và nổi tiếng nhất ở An Giang gắn với Núi Sam là lễ hội nào?",
@@ -851,8 +853,6 @@
           answers: ["Cúng trăng", "Cúng biển", "Cúng rừng", "Cúng lúa"],
           correct: 0,
         },
-
-        // ===== 2. VĂN HÓA – CỘNG ĐỒNG (5 CÂU) =====
         {
           question: "An Giang có những dân tộc nào sinh sống chủ yếu?",
           answers: [
@@ -889,8 +889,6 @@
           answers: ["An Phú và Tân Châu", "Long Xuyên", "Thoại Sơn", "Chợ Mới"],
           correct: 0,
         },
-
-        // ===== 3. ĐỊA LÝ – TỰ NHIÊN (5 CÂU) =====
         {
           question: "An Giang thuộc khu vực nào của Việt Nam?",
           answers: [
@@ -936,8 +934,6 @@
           ],
           correct: 2,
         },
-
-        // ===== 4. DU LỊCH – ẨM THỰC (6 CÂU) =====
         {
           question: "Địa danh du lịch tâm linh nổi tiếng nhất An Giang là?",
           answers: ["Núi Cấm", "Núi Sam", "Núi Ba Thê", "Núi Dài"],
@@ -988,8 +984,6 @@
           ],
           correct: 1,
         },
-
-        // ===== 5. KINH TẾ – PHÁT TRIỂN (6 CÂU) =====
         {
           question: "Ngành kinh tế chủ lực của An Giang là gì?",
           answers: [
@@ -1041,17 +1035,16 @@
           correct: 1,
         },
       ];
-
       let toastTimer = null;
       quiz = quiz.sort(() => Math.random() - 0.5);
       let index = 0;
       let score = 0;
       let correctCount = 0;
-      let totalTime = 10 * 60; // 10 phút
+      let totalTime = 10 * 60;
       let timer;
-      const correctSound = new Audio("./amthanh/dung.mp3"); // đúng → "Yee!"
-      const wrongSound = new Audio("./amthanh/wrong.mp3"); // sai → "Ô ồ!"
-      const finishSound = new Audio("./amthanh/end.mp3"); // 🔊 âm thanh kết thúc
+      const correctSound = new Audio("./amthanh/dung.mp3");
+      const wrongSound = new Audio("./amthanh/wrong.mp3");
+      const finishSound = new Audio("./amthanh/end.mp3");
       function showToast(message, type) {
         const toast = document.getElementById("toast");
         if (toastTimer) {
@@ -1300,11 +1293,9 @@
         const total = quiz.length;
         const correctPercent = Math.round((correctCount / total) * 100);
         const wrongPercent = 100 - correctPercent;
-
         const timeUsed = 10 * 60 - totalTime;
         const minutes = Math.floor(timeUsed / 60);
         const seconds = timeUsed % 60;
-
         let rank, emoji;
         if (score >= total * 10 * 0.9) {
           rank = "Xuất sắc";
@@ -1319,10 +1310,8 @@
           rank = "Cần cố gắng";
           emoji = "💪";
         }
-
         const text = `
 🎮 QUIZ AN GIANG 🎮
-
 🏆 Điểm: ${score}
 ✅ Số câu đúng: ${correctCount}/${total}
 ❌ Số câu sai: ${wrongCount}
@@ -1330,10 +1319,8 @@
 📉 Tỷ lệ sai: ${wrongPercent}%
 ⏱ Thời gian: ${minutes} phút ${seconds} giây
 🎖 Xếp hạng: ${emoji} ${rank}
-
 🔥 Bạn có thể làm tốt hơn không? Thử ngay!
 `;
-
         if (navigator.clipboard && window.isSecureContext) {
           navigator.clipboard
             .writeText(text.trim())
