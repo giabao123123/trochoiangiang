@@ -265,7 +265,12 @@
       <button
         id="sound-btn"
         class="neon-btn neon-box2 w3-left buu sound-btn-game w3-hide-medium w3-hide-small"
-        style="left: 25px; position: absolute"
+        style="
+          left: 25px;
+          position: absolute;
+          background-color: orange;
+          color: white;
+        "
         onclick="toggleSound()"
       >
         🔊NHẠC: BẬT
@@ -625,9 +630,6 @@
         clearInterval(timer);
         playFinishSound();
         stopAllMusic();
-        document.querySelectorAll('[id^="sound-btn"]').forEach((btn) => {
-          btn.classList.add("sound-btn-hidden");
-        });
         document.getElementById("timer").style.display = "none";
         document.getElementById("progress").style.display = "none";
         document.getElementById("question").style.display = "none";
@@ -763,7 +765,7 @@
         document.getElementById("hud-wrong").innerText = "0";
         document.querySelector(".mobile-hud").style.display = "flex";
         document.querySelectorAll('[id^="sound-btn"]').forEach((btn) => {
-          btn.classList.remove("sound-btn-hidden");
+          btn.style.display = "inline-block";
         });
         const timerEl = document.getElementById("timer");
         timerEl.classList.remove("shake", "danger");
@@ -791,6 +793,246 @@
             "Lễ hội Vía Bà Chúa Xứ Núi Sam",
             "Lễ hội Chol Chnam Thmay",
             "Lễ hội Đôlta",
+          ],
+          correct: 1,
+        },
+        {
+          question:
+            "Lễ hội Đôlta của đồng bào Khmer An Giang gắn liền với hoạt động nào?",
+          answers: ["Đua ghe ngo", "Đua bò Bảy Núi", "Hát dù kê", "Múa lân"],
+          correct: 1,
+        },
+        {
+          question:
+            "Lễ hội Chol Chnam Thmay là Tết truyền thống của dân tộc nào?",
+          answers: ["Kinh", "Chăm", "Hoa", "Khmer"],
+          correct: 3,
+        },
+        {
+          question:
+            "Lễ hội tôn vinh Thoại Ngọc Hầu nhằm tưởng nhớ công lao nào?",
+          answers: [
+            "Chống ngoại xâm",
+            "Mở mang đô thị",
+            "Đào kênh Vĩnh Tế",
+            "Xây dựng làng nghề",
+          ],
+          correct: 2,
+        },
+        {
+          question: "Lễ hội đình Châu Phú thờ vị danh tướng nào?",
+          answers: [
+            "Nguyễn Trung Trực",
+            "Thoại Ngọc Hầu",
+            "Nguyễn Hữu Cảnh",
+            "Trương Định",
+          ],
+          correct: 2,
+        },
+        {
+          question: "An Giang là nơi hình thành tôn giáo nội sinh nào nổi bật?",
+          answers: [
+            "Cao Đài",
+            "Phật giáo Hòa Hảo",
+            "Tin Lành",
+            "Thiên Chúa giáo",
+          ],
+          correct: 1,
+        },
+        {
+          question: "Lễ hội Nghinh Ông gắn liền với tín ngưỡng nào?",
+          answers: [
+            "Thờ Mẫu",
+            "Thờ cá Ông (Nam Hải)",
+            "Thờ Thành Hoàng",
+            "Thờ tổ nghề",
+          ],
+          correct: 1,
+        },
+        {
+          question:
+            "Lễ hội Ok Om Bok của đồng bào Khmer thường gắn với nghi thức nào?",
+          answers: ["Cúng trăng", "Cúng biển", "Cúng rừng", "Cúng lúa"],
+          correct: 0,
+        },
+        {
+          question: "An Giang có những dân tộc nào sinh sống chủ yếu?",
+          answers: [
+            "Kinh, Khmer, Chăm, Hoa",
+            "Kinh, Tày, Nùng, Dao",
+            "Kinh, Mường, Thái",
+            "Kinh, Ê Đê, Gia Rai",
+          ],
+          correct: 0,
+        },
+        {
+          question: "Dân tộc Khmer ở An Giang tập trung nhiều tại khu vực nào?",
+          answers: [
+            "Long Xuyên",
+            "Châu Đốc",
+            "Tri Tôn và Tịnh Biên",
+            "Chợ Mới",
+          ],
+          correct: 2,
+        },
+        {
+          question: "An Giang là tỉnh có bao nhiêu tôn giáo được công nhận?",
+          answers: ["5", "7", "9", "11"],
+          correct: 2,
+        },
+        {
+          question:
+            "Tỷ lệ dân số theo tôn giáo ở An Giang chiếm khoảng bao nhiêu?",
+          answers: ["30%", "50%", "65%", "78%"],
+          correct: 3,
+        },
+        {
+          question: "Người Chăm ở An Giang tập trung chủ yếu tại đâu?",
+          answers: ["An Phú và Tân Châu", "Long Xuyên", "Thoại Sơn", "Chợ Mới"],
+          correct: 0,
+        },
+        {
+          question: "An Giang thuộc khu vực nào của Việt Nam?",
+          answers: [
+            "Đông Nam Bộ",
+            "Tây Nguyên",
+            "Đồng bằng sông Cửu Long",
+            "Duyên hải Nam Trung Bộ",
+          ],
+          correct: 2,
+        },
+        {
+          question: "An Giang là tỉnh duy nhất của ĐBSCL có đặc điểm nào?",
+          answers: [
+            "Giáp biển Đông",
+            "Có núi cao nhất miền Tây",
+            "Nằm ở cả hai bờ sông Cửu Long",
+            "Có cao nguyên",
+          ],
+          correct: 2,
+        },
+        {
+          question: "Hai con sông chính chảy qua An Giang là gì?",
+          answers: [
+            "Sông Đồng Nai và Sài Gòn",
+            "Sông Tiền và sông Hậu",
+            "Sông Vàm Cỏ Đông và Tây",
+            "Sông Ba và sông Cái",
+          ],
+          correct: 1,
+        },
+        {
+          question: "An Giang có cửa khẩu quốc tế nào?",
+          answers: ["Mộc Bài", "Lào Cai", "Tịnh Biên và Vĩnh Xương", "Hà Tiên"],
+          correct: 2,
+        },
+        {
+          question: "Khí hậu An Giang thuộc kiểu khí hậu nào?",
+          answers: [
+            "Ôn đới hải dương",
+            "Cận nhiệt",
+            "Nhiệt đới gió mùa",
+            "Hoang mạc",
+          ],
+          correct: 2,
+        },
+        {
+          question: "Địa danh du lịch tâm linh nổi tiếng nhất An Giang là?",
+          answers: ["Núi Cấm", "Núi Sam", "Núi Ba Thê", "Núi Dài"],
+          correct: 1,
+        },
+        {
+          question: "Món ăn đặc sản nổi tiếng của An Giang là?",
+          answers: ["Bún bò Huế", "Bún cá Châu Đốc", "Mì Quảng", "Phở Hà Nội"],
+          correct: 1,
+        },
+        {
+          question: "Món ăn gắn liền với mùa nước nổi An Giang là?",
+          answers: [
+            "Cá lóc nướng trui",
+            "Cá linh bông điên điển",
+            "Bánh xèo",
+            "Bún mắm",
+          ],
+          correct: 1,
+        },
+        {
+          question: "Làng nghề truyền thống nổi bật của An Giang là?",
+          answers: [
+            "Gốm Bát Tràng",
+            "Đúc đồng Chợ Mới",
+            "Lụa Vạn Phúc",
+            "Nón lá Huế",
+          ],
+          correct: 1,
+        },
+        {
+          question: "Ẩm thực An Giang chịu ảnh hưởng văn hóa của dân tộc nào?",
+          answers: [
+            "Kinh – Khmer – Chăm",
+            "Kinh – Hoa – Nhật",
+            "Kinh – Thái – Lào",
+            "Kinh – Mường",
+          ],
+          correct: 0,
+        },
+        {
+          question: "Du lịch An Giang phát triển mạnh ở loại hình nào?",
+          answers: [
+            "Du lịch biển",
+            "Du lịch tâm linh và sinh thái",
+            "Du lịch nghỉ dưỡng cao cấp",
+            "Du lịch mạo hiểm",
+          ],
+          correct: 1,
+        },
+        {
+          question: "Ngành kinh tế chủ lực của An Giang là gì?",
+          answers: [
+            "Công nghiệp nặng",
+            "Nông nghiệp",
+            "Khai khoáng",
+            "Hàng không",
+          ],
+          correct: 1,
+        },
+        {
+          question: "Sản phẩm nông nghiệp nổi bật của An Giang là?",
+          answers: ["Cà phê", "Cao su", "Lúa gạo và thủy sản", "Hồ tiêu"],
+          correct: 2,
+        },
+        {
+          question: "An Giang có lợi thế phát triển kinh tế nào?",
+          answers: [
+            "Giao thông đường sắt",
+            "Kinh tế biển",
+            "Giao thông thủy và cửa khẩu",
+            "Khai thác dầu khí",
+          ],
+          correct: 2,
+        },
+        {
+          question: "Thành phố trung tâm của tỉnh An Giang trước sáp nhập là?",
+          answers: ["Châu Đốc", "Long Xuyên", "Hà Tiên", "Rạch Giá"],
+          correct: 1,
+        },
+        {
+          question: "An Giang có vai trò gì trong vùng ĐBSCL?",
+          answers: [
+            "Trung tâm công nghiệp",
+            "Vùng sản xuất nông nghiệp trọng điểm",
+            "Vùng khai khoáng",
+            "Vùng du lịch biển",
+          ],
+          correct: 1,
+        },
+        {
+          question: "Sau sáp nhập, An Giang có lợi thế lớn về yếu tố nào?",
+          answers: [
+            "Công nghiệp nặng",
+            "Kinh tế biển – nông nghiệp – du lịch",
+            "Hàng không",
+            "Công nghệ cao",
           ],
           correct: 1,
         },
